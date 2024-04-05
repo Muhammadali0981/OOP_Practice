@@ -20,7 +20,7 @@ public:
     }
 };
 
-class b : virtual public a
+class b : public a
 {
 public:
     void function(){
@@ -29,7 +29,7 @@ public:
 
 };
 
-class c : virtual public a{};
+class c : public a{};
 
 class d:public b,public c{
 
@@ -38,8 +38,8 @@ class d:public b,public c{
 int main(){
 
     d objectofd;
-    objectofd.seta(12);
-    cout << objectofd.geta() << endl;
+    objectofd.b::seta(12);
+    cout << objectofd.b::geta() << endl;
    
    
 }
