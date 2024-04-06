@@ -2,6 +2,8 @@
 hang of advance oop things*/
 
 #include <iostream>
+using namespace std;
+
 
 class myclass
 {
@@ -19,22 +21,21 @@ public:
         std::cout << a << std::endl << b << std::endl << x << std::endl << y;
     
     }
-    friend class yourclass;
-};
 
-class yourclass{
-public:
-    void increments(myclass &a){
-        a.a += 1;
-    }
-
+    friend void friendfunction(myclass &obj);
 };
+class a{
+    public 
+}
+void friendfunction(myclass &obj){
+    obj.a++;
+}
 
 int main()
 {
     myclass myobj;
-    yourclass yourobj;
-    yourobj.increments(myobj);
+    
+    friendfunction(myobj);
     myobj.display();//prints a as 11
 }
 
